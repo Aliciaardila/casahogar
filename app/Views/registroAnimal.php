@@ -26,7 +26,8 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="<?=site_url('/')?>"> Home</a>
-                </li>
+				</li>
+				<li class="nav-item">
                 <a class="nav-link" href="<?=site_url('/productos/registro')?>"> Registro Producto</a>
                 </li>
         
@@ -81,7 +82,7 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Foto:</label>
-                            <input type="number" class="form-control" name="foto">
+                            <input type="text" class="form-control" name="foto">
                         </div>
 
                         <div class="mb-3">
@@ -111,6 +112,7 @@
                 </div>
                 <div class="col-12 col-md-5 align-self-end">
                     <img src="<?= base_url('public/img/pluto.gif')?>" alt="imagen" class="img-fluid w-100">
+					<a class="btn btn-primary" href="<?= site_url('/animales/listado') ?>">Ver animales</a>
                 </div>
             </div>
         </div>
@@ -118,22 +120,24 @@
     </main>
 
 	<section>
-		<?php ?>
-		<div class="modal fade" id="modal" tabindex="-1">
-			<div class="modal-dialog">
-				<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">Casa Hogar</h5>
-					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			<?php if(session('mensaje')): ?>
+			<div class="modal fade" id="modal" tabindex="-1">
+				<div class="modal-dialog">
+					<div class="modal-content">
+					<div class="modal-header fondoPrincipal text-while" >
+						<h5 class="modal-title" id="exampleModalLabel">Casa Hogar</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						<h5><?=session('mensaje')?></h5>
+					</div>
+					</div>
 				</div>
-				<div class="modal-body">
-					<h5>Prueba</h5>
 				</div>
-				</div>
-			</div>
-			</div>
-		<?php ?>
-	</section>
+				<?php unset($_SESSION['mensaje']); ?>
+			<?php endif ?>
+		</section>
+
     <footer class="fondoDos p-5">
 		<div class="container-fluid">
 

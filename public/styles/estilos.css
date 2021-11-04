@@ -3,7 +3,12 @@
 }
 
 .fondo {
-    background-image: url('../img/fondo.png');
+    background-image: url('../img/fondo1.png');
+}
+
+.boton {
+    background-color: #07A1E1 !important;
+    color: white !important;
 }
 
 .navbar {

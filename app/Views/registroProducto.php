@@ -27,6 +27,7 @@
                 <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="<?=site_url('/')?>">Home</a>
                 </li>
+				<li class="nav-item">
                 <a class="nav-link" href="<?=site_url('/animales/registro')?>">Registro Animal</a>
                 </li>
         
@@ -68,6 +69,7 @@
         <div class="container mb-5">
              <div class="row mt-5 d-flex justify-content-center">
                 <div class="col-12 col-md-5">
+					
                     <h3 class="fuente2 fw-bold text-center">Registro de productos</h3>
                     
                     <form action="<?= site_url('/productos/registro/nuevo') ?> " method="POST" class="mt-4">
@@ -76,7 +78,7 @@
                             <input type="text" class="form-control" name="producto">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Fotografía:</label>
+                            <label class="form-label">Foto:</label>
                             <input type="text" class="form-control" name="foto">
                         </div>
                         <div class="mb-3">
@@ -105,12 +107,15 @@
                         
                     <div class="d-grid gap-2">
                             <button class="btn boton" type="submit">Registrar</button>
+							
                         </div>
+						
                         
                     </form>
                 </div>
                 <div class="col-12 col-md-5 align-self-end">
                     <img src="<?= base_url('public/img/cuido.png')?>" alt="imagen" class="img-fluid w-100">
+					<a class="btn btn-primary" href="<?= site_url('/productos/listado') ?>">Ver inventario</a>
                 </div>
             </div>
         </div>
