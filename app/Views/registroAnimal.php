@@ -99,8 +99,8 @@
                                 <option value="1" selected>Perro</option>
                                 <option value="2">Gato</option>
                                 <option value="3">Ave</option>
-                                <option value="4">Caballo</option>
-                                <option value="5">Pez</option>
+                                <option value="4">Reptil</option>
+                                <option value="5">Equino</option>
                             </select>
                         </div>
                         

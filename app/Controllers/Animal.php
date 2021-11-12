@@ -119,7 +119,7 @@ public function eliminar($id){
         $modelo->where('id',$id)->delete();
 
         //Entrego una respuesta
-        $mensaje="Exito eliminando el animal";
+        $mensaje="Animal Eliminado con Exito";
         return redirect()->to(site_url('/animales/registro'))->with('mensaje',$mensaje);
 
 
@@ -131,6 +131,55 @@ public function eliminar($id){
 
   }
 }
+
+public function editar($id){
+
+    //1. Recibir los datos del formulario
+
+    $nombre=$this->request->getPost("nombre");
+    $edad=$this->request->getPost("edad");
+    
+
+    if($this->validate('formularioEditarAnimal')){
+
+       //intentar conectar BD
+        //insertar datos
+        try{
+
+            //instanciar un objeto sacar fotocopia a la clase crar un objeto
+            $modelo=new AnimalModelo();
+            // armo paquete de datos a Registar
+
+            $datos=array(
+                "nombre"=>$nombre,
+                "edad"=>$edad
+                
+               
+            );
+
+            // agego los datos usanso el objeto
+             $modelo->update($id,$datos);
+
+            //entrego una respuesta
+
+            $mensaje="Exito editando el animal";
+            return redirect()->to(site_url('/animales/registro'))->with('mensaje',$mensaje);
+
+        }catch(\Exception $error){
+            $mensaje=$error->getMessage();
+            return redirect()->to(site_url('/animales/registro)'))->with('mensaje',$mensaje);
+        }
+
+    } else{
+        $mensaje="Tenemos campos sin llenar";
+        return redirect()->to(site_url('/animales/registro'))->with('mensaje',$mensaje);
+
+    }
+    
+   
+}
+
+
 
 
 }

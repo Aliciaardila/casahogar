@@ -101,12 +101,12 @@
 							<p>Perro</p>
 						</div>
 							<div class="col-1" >
-							<img src="<?= base_url('public/img/fish-icon.png') ?>" class="img-fluid w-100 zoom zoom:hover" alt="foto">
-							<p>Pez</p>
+							<img src="<?= base_url('public/img/reptile-icon.png') ?>" class="img-fluid w-100 zoom zoom:hover" alt="foto">
+							<p>Reptiles</p>
 						</div>
 						<div class="col-1" >
 							<img src="<?= base_url('public/img/horse-icon.png') ?>" class="img-fluid w-100 zoom zoom:hover" alt="foto">
-							<p>Caballo</p>
+							<p>Equinos</p>
 						</div>
 
 					</div>

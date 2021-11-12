@@ -43,7 +43,9 @@
 
         <div class="container">
             <div class="row row-cols-1 row-cols-md-5 g-4">
-                <?php foreach($animales as $animal):?>
+                <?php use App\Controllers\Animal;
+
+                foreach($animales as $animal):?>
                     <div class="col">
                         <div class="card h-100 p-3">
                             <img src="<?= $animal["foto"]?>" class="card-img-top h-100" alt="foto">
@@ -51,7 +53,7 @@
                                 <h5 class="card-title"><?= $animal["nombre"]?></h5>
                                 <p class="card-text"><?= $animal["edad"]?></p>
                                 <a data-bs-toggle="modal" data-bs-target="#confirmacion<?= $animal["id"] ?>"  href="#" class="btn btn-primary"><i class="fas fa-trash-alt"></i></a>
-                                <a href="#" class="btn btn-primary"><i class="fas fa-edit"></i></a>
+                                <a data-bs-toggle="modal" data-bs-target="#editar<?= $animal["id"] ?>"href="#" class="btn btn-primary"><i class="fas fa-edit"></i></a>
                             </div>
                         </div>
 
@@ -64,7 +66,7 @@
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        <p>¿Está suguro de eliminar este animal?</p>
+                                        <p>¿Está seguro de eliminar este animal?</p>
                                         <p><?= $animal["id"] ?></p>
                                     </div>
                                     <div class="modal-footer">
@@ -75,6 +77,44 @@
                             </div>
                         </div>
                     </section>
+                    
+                    <section>
+                            <div class="modal fade" id="editar<?= $animal["id"] ?>">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header fondoPrincipal text-white">
+                                        <h5 class="modal-title">Modal title</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-3 align-self-center">
+                                                <img src="<?=$animal["foto"]?>" alt="foto" class="img-fluid w-100">
+
+                                            </div>
+                                             <div class="col-9">
+                                                <form action="<?= site_url('/animales/editar/'.$animal["id"]) ?>" method="POST">
+                                                <div class="mb-3">
+                                                    <label class="form-label">Nombre:</label>
+                                                    <input type="text" class="form-control" name="nombre" value="<?=$animal["nombre"]?>">
+                                                </div> 
+
+                                                <div class="mb-3">
+                                                    <label class="form-label">Edad:</label>
+                                                    <input type="text" class="form-control" name="edad" value="<?=$animal["edad"]?>">
+                                                </div> 
+                                                    <button class="btn boton" type="submit">Editar</button>
+                                                     
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
                    </div>
                 <?php endforeach?>
 

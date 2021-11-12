@@ -63,16 +63,6 @@ class Producto extends BaseController
 
         }
 
-        //2. construir un arreglo asociativo(cada cajon tiene una clave) con los datos
-       /* $dato=array(
-        "producto"=>$producto,
-        "foto"=>$foto,
-        "precio"=>$precio,
-        "descripcion"=>$descripcion,
-        "tipo"=>$tipo
-    );
-
-    print_r($dato);*/
     }
     public function buscar(){
 
@@ -132,5 +122,130 @@ class Producto extends BaseController
       }
     }
 
+    public function editar($id){
 
+        //1. Recibir los datos del formulario
+        $producto=$this->request->getPost("producto");
+        $precio=$this->request->getPost("precio");
+       
+        if($this->validate('formularioEditarProducto')){
+
+           //intentar conectar BD
+            //insertar datos
+            try{
+
+                //instanciar un objeto sacar fotocopia a la clase crar un objeto
+                $modelo=new ProductoModelo();
+
+                // armo paquete de datos a Registar
+
+                $datos=array(
+                    "nombre"=>$producto,
+                    "precio"=>$precio
+                    
+                   
+                );
+
+                // agrego los datos usanso el objeto
+                 $modelo->update($id,$datos);
+
+                //entrego una respuesta
+
+                $mensaje="Exito editando el producto";
+                return redirect()->to(site_url('/productos/registro'))->with('mensaje',$mensaje);
+
+            }catch(\Exception $error){
+                $mensaje=$error->getMessage();
+                return redirect()->to(site_url('/productos/registro'))->with('mensaje',$mensaje);
+            }
+
+        } else{
+            $mensaje="Tenemos campos sin llenar";
+            return redirect()->to(site_url('/productos/registro'))->with('mensaje',$mensaje);
+
+        }
+
+        
+    }
+
+/// funciones iconos pagina de inicio.
+
+public function productosPerro(){
+    try{
+
+        $modelo=new ProductoModelo();
+        $resultado=$modelo->where('tipo','1')->findAll();
+        $productosPerro=array('productosPerro'=>$resultado);
+        return view('listaProductosPerro',$productosPerro); 
+
+       }catch(\Exception $error){
+
+        return redirect()->to(site_url('/productos/registro'))->with('mensaje',$error->getMessage());
+
+    }
+}
+
+
+public function productosGato(){
+    try{
+
+        $modelo=new ProductoModelo();
+        $resultado=$modelo->where('tipo', '2')->findAll();
+        $productosGato=array('productosGato'=>$resultado);
+        return view('listaProductosGato',$productosGato);
+
+    }
+    catch(\Exception $error){
+
+        return redirect()->to(site_url('/'))->with('mensaje', $error->getMessage());
+    }
+}
+
+
+public function productosAve(){
+    try{
+
+        $modelo=new ProductoModelo();
+        $resultado=$modelo->where('tipo', '3')->findAll();
+        $productosAve=array('productosAve'=>$resultado);
+        return view('listaProductosAve',$productosAve);
+
+    }
+    catch(\Exception $error){
+
+        return redirect()->to(site_url('/productos/ave/listado'))->with('mensaje', $error->getMessage());
+    }
+}
+
+
+public function productosReptil(){
+    try{
+
+        $modelo=new ProductoModelo();
+        $resultado=$modelo->where('tipo', '4')->findAll();
+        $productosReptil=array('productosReptil'=>$resultado);
+        return view('listaProductosReptil',$productosReptil);
+
+    }
+    catch(\Exception $error){
+
+        return redirect()->to(site_url('/'))->with('mensaje', $error->getMessage());
+    }
+}
+
+public function productosEquino(){
+    try{
+
+        $modelo=new ProductoModelo();
+        $resultado=$modelo->where('tipo', '5')->findAll();
+        $productosEquino=array('productosEquino'=>$resultado);
+        return view('listaProductosReptil',$productosEquino);
+
+    }
+    catch(\Exception $error){
+
+        return redirect()->to(site_url('/'))->with('mensaje', $error->getMessage());
+    }
+}
+   
 }
