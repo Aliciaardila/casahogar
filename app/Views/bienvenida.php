@@ -89,24 +89,24 @@
 					<div class="row d-flex justify-content-center">
 
 						<div class="col-1" >
+							<img src="<?= base_url('public/img/dog-icon.png') ?>" class="img-fluid w-100 zoom zoom:hover" alt="foto">
+							<p>....Perros....</p>  
+						</div>
+						<div class="col-1" >
 							<img src="<?= base_url('public/img/cat-icon.png') ?>" class="img-fluid w-100 zoom zoom:hover" alt="foto">
-							<p>Gato</p>
+							<p>....Gatos....</p>
 						</div>
 						<div class="col-1" >
 							<img src="<?= base_url('public/img/bird-icon.png') ?>" class="img-fluid w-100 zoom zoom:hover" alt="foto">
-							<p>Aves</p>
-						</div>
-						<div class="col-1" >
-							<img src="<?= base_url('public/img/dog-icon.png') ?>" class="img-fluid w-100 zoom zoom:hover" alt="foto">
-							<p>Perro</p>
+							<p>....Aves....</p>
 						</div>
 							<div class="col-1" >
 							<img src="<?= base_url('public/img/reptile-icon.png') ?>" class="img-fluid w-100 zoom zoom:hover" alt="foto">
-							<p>Reptiles</p>
+							<p>..Reptiles..</p>
 						</div>
 						<div class="col-1" >
 							<img src="<?= base_url('public/img/horse-icon.png') ?>" class="img-fluid w-100 zoom zoom:hover" alt="foto">
-							<p>Equinos</p>
+							<p>..Equinos..</p>
 						</div>
 
 					</div>

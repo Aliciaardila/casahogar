@@ -96,7 +96,8 @@
                         <div class="mb-3">
                             <label class="form-label">Especie Animal:</label>
                             <select class="form-select" name="tipo">
-                                <option value="1" selected>Perro</option>
+							<option selected>seleccione el tipo de animal</option>
+                                <option value="1">Perro</option>
                                 <option value="2">Gato</option>
                                 <option value="3">Ave</option>
                                 <option value="4">Reptil</option>

@@ -177,7 +177,7 @@ public function productosPerro(){
         $resultado=$modelo->where('tipo','1')->findAll();
         $productosPerro=array('productosPerro'=>$resultado);
         return view('listaProductosPerro',$productosPerro); 
-
+        
        }catch(\Exception $error){
 
         return redirect()->to(site_url('/productos/registro'))->with('mensaje',$error->getMessage());
