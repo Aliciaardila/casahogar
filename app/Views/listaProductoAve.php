@@ -23,7 +23,7 @@
 			<div class="container">
 
 				<div class="d-flex bd-highlight mb-2">
-					<a href="<?= site_url('/') ?>">
+					<a href="<?= site_url('/productos/ave/listado') ?>">
 						<div class="p-2 bd-highlight"><img class="mt-1" src="<?= base_url('public/img/huellalogo.png') ?>" alt=""></div>
 					</a>
 					
