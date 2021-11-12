@@ -12,7 +12,28 @@
 	<link href="https://fonts.googleapis.com/css2?family=Acme&family=Lobster&family=Pacifico&family=Permanent+Marker&display=swap" rel="stylesheet">
 
 </head>
-<body>
+<body class="fondo">
+
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <div class="container-fluid">
+        <a class="navbar-brand fuente" href="#">
+            <i class="fas fa-paw"></i>
+            Casa Hogar
+        </a>
+        
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="<?=site_url('/')?>">Home</a>
+                </li>
+				<li class="nav-item">
+                <a class="nav-link" href="<?=site_url('/animales/registro')?>">Registro Animal</a>
+                </li>
+        
+        </ul>
+        
+    </div>
+    </nav>
+
 
 <header>
 
