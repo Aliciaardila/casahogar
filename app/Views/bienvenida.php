@@ -89,24 +89,29 @@
 					<div class="row d-flex justify-content-center">
 
 						<div class="col-1" >
-							<img src="<?= base_url('public/img/dog-icon.png') ?>" class="img-fluid w-100 zoom zoom:hover" alt="foto">
-							<p>....Perros....</p>  
+							<a href="<?= site_url('/productos/perro/listado') ?>"><img src="<?= base_url('public/img/dog-icon.png') ?>" class="img-fluid w-100 zoom zoom:hover" alt="foto">
+							<strong><p>....Perros....</p></strong>
+							</a> 
 						</div>
 						<div class="col-1" >
-							<img src="<?= base_url('public/img/cat-icon.png') ?>" class="img-fluid w-100 zoom zoom:hover" alt="foto">
-							<p>....Gatos....</p>
+							<a href="<?= site_url('/productos/gato/listado') ?>"><img src="<?= base_url('public/img/cat-icon.png') ?>" class="img-fluid w-100 zoom zoom:hover" alt="foto">
+							<strong><p>....Gatos....</p></strong>
+							</a>
 						</div>
 						<div class="col-1" >
-							<img src="<?= base_url('public/img/bird-icon.png') ?>" class="img-fluid w-100 zoom zoom:hover" alt="foto">
-							<p>....Aves....</p>
+							<a href="<?= site_url('/productos/aves/listado') ?>"><img src="<?= base_url('public/img/bird-icon.png') ?>" class="img-fluid w-100 zoom zoom:hover" alt="foto">
+							<strong><p>....Aves....</p></strong>
+							</a>
 						</div>
 							<div class="col-1" >
-							<img src="<?= base_url('public/img/reptile-icon.png') ?>" class="img-fluid w-100 zoom zoom:hover" alt="foto">
-							<p>..Reptiles..</p>
+							<a href="<?= site_url('/productos/reptil/listado') ?>"><img src="<?= base_url('public/img/reptile-icon.png') ?>" class="img-fluid w-100 zoom zoom:hover" alt="foto">
+							<strong><p>..Reptiles..</p></strong>
+							</a>
 						</div>
 						<div class="col-1" >
-							<img src="<?= base_url('public/img/horse-icon.png') ?>" class="img-fluid w-100 zoom zoom:hover" alt="foto">
-							<p>..Equinos..</p>
+							<a href="<?= site_url('/productos/equinos/listado') ?>"><img src="<?= base_url('public/img/horse-icon.png') ?>" class="img-fluid w-100 zoom zoom:hover" alt="foto">
+							<strong><p>..Equinos..</p></strong>
+							</a>
 						</div>
 
 					</div>
@@ -164,9 +169,9 @@
 						<h3 class="fw-bold fuente"><span><i class="fas fa-paw"></i></span>WILD HOUSE</h3>
 						<br>
 							<div class="redes-sociales">
-								<i class="fab fa-facebook fa-2x  zoom zoom:hover"></i>
-								<i class="fab fa-instagram fa-2x  zoom zoom:hover"></i>
-								<i class="fab fa-youtube fa-2x  zoom zoom:hover"></i>
+								<a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook fa-2x  zoom zoom:hover"></i></a>
+								<a href="https://www.instagram.com/"target="_blank"><i class="fab fa-instagram fa-2x  zoom zoom:hover"></i></a>
+								<a href="https://www.youtube.com/"target="_blank"><i class="fab fa-youtube fa-2x  zoom zoom:hover"></i></a>
 							</div>
 							
 						<br>

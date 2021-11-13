@@ -147,9 +147,9 @@
 						<h3 class="fw-bold fuente"><span><i class="fas fa-paw"></i></span>WILD HOUSE</h3>
 						<br>
 							<div class="redes-sociales">
-								<i class="fab fa-facebook fa-2x  zoom zoom:hover"></i>
-								<i class="fab fa-instagram fa-2x  zoom zoom:hover"></i>
-								<i class="fab fa-youtube fa-2x  zoom zoom:hover"></i>
+								<a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook fa-2x  zoom zoom:hover"></i></a>
+								<a href="https://www.instagram.com/"target="_blank"><i class="fab fa-instagram fa-2x  zoom zoom:hover"></i></a>
+								<a href="https://www.youtube.com/"target="_blank"><i class="fab fa-youtube fa-2x  zoom zoom:hover"></i></a>
 							</div>
 							
 						<br>
@@ -160,6 +160,7 @@
 		  </div>
  </div>	
 </footer>
+
     <script src="https://kit.fontawesome.com/7b642ec699.js" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
 </body>

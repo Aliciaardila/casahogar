@@ -75,7 +75,7 @@
                     <form action="<?= site_url('/productos/registro/nuevo') ?> " method="POST" class="mt-4">
                         <div class="mb-3">
                             <label class="form-label">Producto:</label>
-                            <input type="text" class="form-control" name="producto">
+                            <input type="text" class="form-control" name="nombre">
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Foto:</label>
@@ -141,7 +141,7 @@
 			<?php endif ?>
 		</section>
 
-    <footer class="fondoDos p-5">
+		<footer class="fondoDos p-5">
 		<div class="container-fluid">
 
 			<div class="row">
@@ -165,9 +165,9 @@
 						<h3 class="fw-bold fuente"><span><i class="fas fa-paw"></i></span>WILD HOUSE</h3>
 						<br>
 							<div class="redes-sociales">
-								<i class="fab fa-facebook fa-2x  zoom zoom:hover"></i>
-								<i class="fab fa-instagram fa-2x  zoom zoom:hover"></i>
-								<i class="fab fa-youtube fa-2x  zoom zoom:hover"></i>
+								<a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook fa-2x  zoom zoom:hover"></i></a>
+								<a href="https://www.instagram.com/"target="_blank"><i class="fab fa-instagram fa-2x  zoom zoom:hover"></i></a>
+								<a href="https://www.youtube.com/"target="_blank"><i class="fab fa-youtube fa-2x  zoom zoom:hover"></i></a>
 							</div>
 							
 						<br>
@@ -178,6 +178,7 @@
 		  </div>
  </div>	
 </footer>
+
 
 <script type="module" src="<?= base_url('public/js/lanzarmodal.js')?>"></script>
 

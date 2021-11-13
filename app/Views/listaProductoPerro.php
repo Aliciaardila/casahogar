@@ -1,38 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="<?= base_url('public/styles/estilos4.css') ?>">
+<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Nuevo Porvenir</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap" rel="stylesheet">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Acme&family=Lobster&family=Pacifico&family=Permanent+Marker&display=swap" rel="stylesheet">
-
+	<link href="https://fonts.googleapis.com/css2?family=Delius+Swash+Caps&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="<?= base_url('public/styles/estilos.css') ?>">
 </head>
 <body class="fondo">
 
-    <nav class="navbar navbar-expand-lg navbar-dark ">
-    <div class="container-fluid">
-        <a class="navbar-brand fuente" href="#">
-            <i class="fas fa-paw"></i>
-            Casa Hogar
-        </a>
-        
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="<?=site_url('/')?>">Home</a>
-                </li>
-				<li class="nav-item">
-                <a class="nav-link" href="<?=site_url('/animales/registro')?>">Registro Animal</a>
-                </li>
-        
-        </ul>
-        
-    </div>
-    </nav>
+<nav class="navbar navbar-expand-lg navbar-dark ">
+  <div class="container-fluid">
+    <a class="navbar-brand fuente" href="#">
+		 <i class="fas fa-paw"></i>
+		Casa Hogar
+	</a>
+    
+    
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+			<li class="nav-item">
+			<a class="nav-link active" aria-current="page" href="<?=site_url('/')?>">Home</a>
+			</li>
+            <li class="nav-item">
+			<a class="nav-link" href="<?= site_url('/productos/registro')?>">Registro Producto</a>
+			</li>
+			<li class="nav-item">
+			<a class="nav-link" href="<?=site_url('/animales/registro')?>">Registro Animal</a>
+			</li>
+       
+      </ul>
+     
+  </div>
+</nav>
 
 
 <header>
@@ -44,7 +50,7 @@
 			<div class="container">
 
 				<div class="d-flex bd-highlight mb-2">
-					<a href="<?= site_url('/productos/ave/listado') ?>">
+					<a href="<?= site_url('/animales/perro/listado') ?>">
 						<div class="p-2 bd-highlight"><img class="mt-1" src="<?= base_url('public/img/huellalogo.png') ?>" alt=""></div>
 					</a>
 					
@@ -62,13 +68,14 @@
 <main>
         <div class="container mt-5">
             <div class="row row-cols-1 row-cols-md-6 g-4">
-                <?php foreach($productosAve as $producto): ?>
+
+                <?php foreach($productosPerro as $producto): ?>
                     <div class="col">
                         <div class="card h-100 p-3">
                             <img src="<?= $producto["foto"] ?>" class="card-img-top h-100" alt="foto">
                             <div class="card-body">
                                     
-                                <h5 class="card-title"><?= $producto["producto"] ?></h5>
+                                <h5 class="card-title"><?= $producto["nombre"] ?></h5>
                                 <p class="card-text"><?= $producto["precio"] ?></p>
                                 <a data-bs-toggle="modal" data-bs-target="#confirmacion<?=$producto["id"]?>"  href="#" class="btn btn-primary"><i class="fas fa-trash-alt"></i></a>
                                 <a data-bs-toggle="modal" data-bs-target="#editar<?=$producto["id"]?>" href="#" class="btn btn-primary"><i class="fas fa-edit"></i></a>
@@ -83,7 +90,7 @@
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                 <div class="modal-header fondoPrincipal text-white">
-                                    <h5 class="modal-title" id="exampleModalLabel">Casa animal</h5>
+                                    <h5 class="modal-title" id="exampleModalLabel">Casa Hogar</h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
@@ -105,7 +112,7 @@
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                 <div class="modal-header fondonav fuente">
-                                    <h5 class="modal-title" id="exampleModalLabel">Casa animal</h5>
+                                    <h5 class="modal-title" id="exampleModalLabel">Casa Hogar</h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
@@ -119,7 +126,7 @@
                                                 </div>
                                                 <div class="mb-3">
                                                     <label for="" class="form-label">Nombre</label>
-                                                    <input type="text" class="form-control" name="producto" valaue="<?= $producto["producto"] ?>">
+                                                    <input type="text" class="form-control" name="nombre" valaue="<?= $producto["nombre"] ?>">
 
                                                 </div>
                                                 <button type="submit" class="btn btn-primary">Editar</button>
@@ -140,7 +147,7 @@
     </main>
     <br><br><br>
 
-     <footer class="fondoDos p-5">
+    <footer class="fondoDos p-5">
 		<div class="container-fluid">
 
 			<div class="row">
@@ -164,9 +171,9 @@
 						<h3 class="fw-bold fuente"><span><i class="fas fa-paw"></i></span>WILD HOUSE</h3>
 						<br>
 							<div class="redes-sociales">
-								<i class="fab fa-facebook fa-2x  zoom zoom:hover"></i>
-								<i class="fab fa-instagram fa-2x  zoom zoom:hover"></i>
-								<i class="fab fa-youtube fa-2x  zoom zoom:hover"></i>
+								<a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook fa-2x  zoom zoom:hover"></i></a>
+								<a href="https://www.instagram.com/"target="_blank"><i class="fab fa-instagram fa-2x  zoom zoom:hover"></i></a>
+								<a href="https://www.youtube.com/"target="_blank"><i class="fab fa-youtube fa-2x  zoom zoom:hover"></i></a>
 							</div>
 							
 						<br>
@@ -177,7 +184,10 @@
 		  </div>
  </div>	
 </footer>
-    <script src="https://kit.fontawesome.com/7b642ec699.js" crossorigin="anonymous"></script>
+
+	
+	<script src="https://kit.fontawesome.com/7b642ec699.js" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
 </body>
 </html>

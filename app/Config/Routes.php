@@ -38,7 +38,7 @@ $routes->post('/productos/registro/nuevo', 'Producto::registrar');
 $routes->get('/productos/listado', 'Producto::buscar');
 $routes->get('/productos/eliminar/(:num)', 'Producto::eliminar/$1');
 $routes->post('/productos/editar/(:num)', 'Producto::editar/$1');
-$routes->get('/productos/ave/listado', 'Producto::productosAves');
+
 
 $routes->get('/animales/registro', 'Animal::index');
 
@@ -46,6 +46,20 @@ $routes->post('/animales/registro/nuevo', 'Animal::registrar');
 $routes->get('/animales/listado', 'Animal::buscar');
 $routes->get('/animales/eliminar/(:num)', 'Animal::eliminar/$1');
 $routes->post('/animales/editar/(:num)', 'Animal::editar/$1');
+
+$routes->get('/productos/perro/listado', 'Producto::productosPerro');
+$routes->get('/productos/gato/listado', 'Producto::productosGato');
+$routes->get('/productos/reptil/listado', 'Producto::productosReptil');
+$routes->get('/productos/aves/listado', 'Producto::productosAves');
+$routes->get('/productos/equinos/listado', 'Producto::productosEquinos');
+
+
+$routes->get('/animales/perro/listado', 'Animal::Perro');
+$routes->get('/animales/gato/listado', 'Animal::Gato');
+$routes->get('/animales/reptil/listado', 'Animal::Reptil');
+$routes->get('/animales/aves/listado', 'Animal::Aves');
+$routes->get('/animales/equinos/listado', 'animal::Equinos');
+
 
 
 

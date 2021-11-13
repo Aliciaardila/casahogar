@@ -179,6 +179,81 @@ public function editar($id){
    
 }
 
+public function productosPerro(){
+    try{
+
+        $modelo=new AnimalModelo();
+        $resultado=$modelo->where('tipo','1')->findAll();
+        $productosPerro=array('productosPerro'=>$resultado);
+        return view('listaProductoPerro',$productosPerro); 
+
+    }catch(\Exception $error){
+
+        return redirect()->to(site_url('/animales/registro'))->with('mensaje',$error->getMessage());
+
+    }
+}
+
+public function productosGato(){
+    try{
+
+        $modelo=new AnimalModelo();
+        $resultado=$modelo->where('tipo','2')->findAll();
+        $productosGato=array('productosGato'=>$resultado);
+        return view('listaProductosGato',$productosGato); 
+
+    }catch(\Exception $error){
+
+        return redirect()->to(site_url('/animales/registro'))->with('mensaje',$error->getMessage());
+
+    }
+}
+
+public function productosReptil(){
+    try{
+
+        $modelo=new AnimalModelo();
+        $resultado=$modelo->where('tipo','4')->findAll();
+        $productosReptil=array('productosReptil'=>$resultado);
+        return view('listaProductosReptil',$productosReptil); 
+
+    }catch(\Exception $error){
+
+        return redirect()->to(site_url('/animales/registro'))->with('mensaje',$error->getMessage());
+
+    }
+}
+
+public function productosAves(){
+    try{
+
+        $modelo=new AnimalModelo();
+        $resultado=$modelo->where('tipo','3')->findAll();
+        $productosAves=array('productosAves'=>$resultado);
+        return view('listaProductosAves',$productosAves); 
+
+    }catch(\Exception $error){
+
+        return redirect()->to(site_url('/animales/registro'))->with('mensaje',$error->getMessage());
+
+    }
+}
+public function productosEquinos(){
+    try{
+
+        $modelo=new AnimalModelo();
+        $resultado=$modelo->where('tipo','5')->findAll();
+        $productosEquinos=array('productosEquinos'=>$resultado);
+        return view('listaProductosEquinos',$productosEquinos); 
+
+    }catch(\Exception $error){
+
+        return redirect()->to(site_url('/animales/registro'))->with('mensaje',$error->getMessage());
+
+    }
+}
+   
+
 
 
 

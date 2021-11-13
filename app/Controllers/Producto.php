@@ -169,82 +169,79 @@ class Producto extends BaseController
     }
 
 /// funciones iconos pagina de inicio.
-
 public function productosPerro(){
     try{
 
         $modelo=new ProductoModelo();
         $resultado=$modelo->where('tipo','1')->findAll();
         $productosPerro=array('productosPerro'=>$resultado);
-        return view('listaProductosPerro',$productosPerro); 
-        
-       }catch(\Exception $error){
+        return view('listaProductoPerro',$productosPerro); 
+
+    }catch(\Exception $error){
 
         return redirect()->to(site_url('/productos/registro'))->with('mensaje',$error->getMessage());
 
     }
 }
 
-
 public function productosGato(){
     try{
 
         $modelo=new ProductoModelo();
-        $resultado=$modelo->where('tipo', '2')->findAll();
+        $resultado=$modelo->where('tipo','2')->findAll();
         $productosGato=array('productosGato'=>$resultado);
-        return view('listaProductosGato',$productosGato);
+        //print_r($productosGato);
+        return view('listaProductoGato',$productosGato); 
 
-    }
-    catch(\Exception $error){
+    }catch(\Exception $error){
 
-        return redirect()->to(site_url('/'))->with('mensaje', $error->getMessage());
+        return redirect()->to(site_url('/productos/registro'))->with('mensaje',$error->getMessage());
+
     }
 }
-
-
-public function productosAve(){
-    try{
-
-        $modelo=new ProductoModelo();
-        $resultado=$modelo->where('tipo', '3')->findAll();
-        $productosAve=array('productosAve'=>$resultado);
-        return view('listaProductosAve',$productosAve);
-
-    }
-    catch(\Exception $error){
-
-        return redirect()->to(site_url('/productos/ave/listado'))->with('mensaje', $error->getMessage());
-    }
-}
-
 
 public function productosReptil(){
     try{
 
         $modelo=new ProductoModelo();
-        $resultado=$modelo->where('tipo', '4')->findAll();
+        $resultado=$modelo->where('tipo','4')->findAll();
         $productosReptil=array('productosReptil'=>$resultado);
-        return view('listaProductosReptil',$productosReptil);
+        return view('listaProductoReptil',$productosReptil); 
 
-    }
-    catch(\Exception $error){
+    }catch(\Exception $error){
 
-        return redirect()->to(site_url('/'))->with('mensaje', $error->getMessage());
+        return redirect()->to(site_url('/productos/registro'))->with('mensaje',$error->getMessage());
+
     }
 }
 
-public function productosEquino(){
+public function productosAves(){
     try{
 
         $modelo=new ProductoModelo();
-        $resultado=$modelo->where('tipo', '5')->findAll();
-        $productosEquino=array('productosEquino'=>$resultado);
-        return view('listaProductosReptil',$productosEquino);
+        $resultado=$modelo->where('tipo','3')->findAll();
+        $productosAves=array('productosAves'=>$resultado);
+        //print_r($productosAves);
+        return view('listaProductoAve',$productosAves); 
+
+    }catch(\Exception $error){
+
+        return redirect()->to(site_url('/productos/registro'))->with('mensaje',$error->getMessage());
 
     }
-    catch(\Exception $error){
+}
+public function productosEquinos(){
+    try{
 
-        return redirect()->to(site_url('/'))->with('mensaje', $error->getMessage());
+        $modelo=new ProductoModelo();
+        $resultado=$modelo->where('tipo','5')->findAll();
+        $productosEquinos=array('productosEquinos'=>$resultado);
+        return view('listaProductoEquino',$productosEquinos); 
+
+    }catch(\Exception $error){
+
+        return redirect()->to(site_url('/productos/registro'))->with('mensaje',$error->getMessage());
+
     }
 }
    
